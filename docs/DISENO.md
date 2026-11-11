@@ -1,4 +1,4 @@
-# Julián OS — diseño
+# Julitask — diseño
 
 ## 1. Problemas que resuelve
 

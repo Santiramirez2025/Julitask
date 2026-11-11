@@ -49,10 +49,10 @@ export async function calendarioICS(uid: string) {
   const lineas = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Julian OS//ES",
+    "PRODID:-//Julitask//ES",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    "X-WR-CALNAME:Julián OS",
+    "X-WR-CALNAME:Julitask",
     "REFRESH-INTERVAL;VALUE=DURATION:PT1H",
     "X-PUBLISHED-TTL:PT1H",
   ];
@@ -63,7 +63,7 @@ export async function calendarioICS(uid: string) {
       e.tipo === "reunion"
         ? e.persona ? `Reunión con ${e.persona}` : e.titulo || "Reunión"
         : e.titulo;
-    lineas.push("BEGIN:VEVENT", `UID:${e.id}@julian-os`, `DTSTAMP:${sello}`);
+    lineas.push("BEGIN:VEVENT", `UID:${e.id}@julitask`, `DTSTAMP:${sello}`);
     if (e.sinHora) {
       const f = enZona(e.inicio).fecha;
       lineas.push(`DTSTART;VALUE=DATE:${dia(f)}`, `DTEND;VALUE=DATE:${dia(sumarDias(f, 1))}`);
@@ -85,7 +85,7 @@ export async function calendarioICS(uid: string) {
   for (const p of pgs) {
     lineas.push(
       "BEGIN:VEVENT",
-      `UID:${p.id}@julian-os`,
+      `UID:${p.id}@julitask`,
       `DTSTAMP:${sello}`,
       `DTSTART;VALUE=DATE:${dia(p.vence)}`,
       `DTEND;VALUE=DATE:${dia(sumarDias(p.vence, 1))}`,

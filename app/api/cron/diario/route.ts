@@ -64,7 +64,7 @@ async function correoDiario(u: Usuario, base: string) {
     asunto: `Tu día: ${fechaLarga(d.hoy)}`,
     html: plantilla(
       `Buenos días, ${u.nombre.split(" ")[0]}`,
-      bloques.join("") + `<p><a href="${base}" style="color:#14274A;font-weight:600">Abrir Julián OS</a></p>`,
+      bloques.join("") + `<p><a href="${base}" style="color:#14274A;font-weight:600">Abrir Julitask</a></p>`,
     ),
   });
 }
@@ -82,7 +82,7 @@ async function correoSemanal(u: Usuario, base: string) {
       ? titulo("Obras") + lista(d.obras.filter((o) => o.estado === "activa").map((o) => `${esc(o.nombre)} — ${o.calc.porcentaje}% del presupuesto usado`))
       : "") +
     (d.paraContactar.length ? titulo("Clientes para contactar") + lista(d.paraContactar.slice(0, 12).map((c) => esc(c.nombre))) : "") +
-    `<p><a href="${base}" style="color:#14274A;font-weight:600">Abrir Julián OS</a></p>`;
+    `<p><a href="${base}" style="color:#14274A;font-weight:600">Abrir Julitask</a></p>`;
 
   let adjuntos;
   if (u.prefs.correo.copia) {

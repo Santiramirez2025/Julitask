@@ -1,4 +1,4 @@
-# Julián OS
+# Julitask
 
 App privada para que Julián abra el celular y en 10 segundos sepa qué tiene que hacer hoy, qué tiene que pagar, qué venció, cuánto lleva gastado, a qué clientes contactar y cómo vienen sus obras.
 

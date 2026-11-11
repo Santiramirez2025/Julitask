@@ -4,12 +4,12 @@ import "./globals.css";
 import { RegistrarSW } from "@/components/RegistrarSW";
 
 export const metadata: Metadata = {
-  title: { default: "Julián OS", template: "%s · Julián OS" },
+  title: { default: "Julitask", template: "%s · Julitask" },
   description: "Tu día, tus pagos, tus clientes y tus obras en un solo lugar.",
-  applicationName: "Julián OS",
+  applicationName: "Julitask",
   manifest: "/manifest.webmanifest",
   robots: { index: false, follow: false },
-  appleWebApp: { capable: true, title: "Julián OS", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Julitask", statusBarStyle: "default" },
   icons: {
     icon: [
       { url: "/iconos/icono-32.png", sizes: "32x32", type: "image/png" },

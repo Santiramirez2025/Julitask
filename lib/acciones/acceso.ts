@@ -80,7 +80,7 @@ export async function pedirRecuperacion(_: EstadoAcceso, form: FormData): Promis
       const enlace = `${base}/restablecer?token=${token}`;
       await enviarCorreo({
         para: u.email,
-        asunto: "Restablecer tu contraseña de Julián OS",
+        asunto: "Restablecer tu contraseña de Julitask",
         html: plantilla(
           "Restablecer contraseña",
           `<p>Tocá el botón para elegir una contraseña nueva. El enlace vale por una hora.</p>

@@ -103,7 +103,7 @@ function partir(s: string, fuente: PDFFont, tam: number, ancho: number) {
 export async function aPDF(titulo: string, subtitulo: string, tablas: Tabla[]): Promise<Buffer> {
   const pdf = await PDFDocument.create();
   pdf.setTitle(titulo);
-  pdf.setCreator("Julián OS");
+  pdf.setCreator("Julitask");
   const normal = await pdf.embedFont(StandardFonts.Helvetica);
   const negrita = await pdf.embedFont(StandardFonts.HelveticaBold);
   const limpiar = crearLimpiador(normal);
@@ -183,7 +183,7 @@ export async function aPDF(titulo: string, subtitulo: string, tablas: Tabla[]): 
 
   const paginas = pdf.getPages();
   paginas.forEach((p, i) => {
-    p.drawText(limpiar(`Julián OS · generado el ${fechaNumerica(hoy())} · página ${i + 1} de ${paginas.length}`), {
+    p.drawText(limpiar(`Julitask · generado el ${fechaNumerica(hoy())} · página ${i + 1} de ${paginas.length}`), {
       x: M, y: 18, size: 8, font: normal, color: GRIS,
     });
   });
@@ -270,5 +270,5 @@ export function nombreArchivo(base: string, extension: string) {
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-  return `julian-os_${limpio}_${hoy()}.${extension}`;
+  return `julitask_${limpio}_${hoy()}.${extension}`;
 }

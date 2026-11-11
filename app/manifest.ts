@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Julián OS",
-    short_name: "Julián OS",
+    name: "Julitask",
+    short_name: "Julitask",
     description: "Tu día, tus pagos, tus clientes y tus obras en un solo lugar.",
     lang: "es-AR",
     start_url: "/",

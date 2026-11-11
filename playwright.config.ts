@@ -45,7 +45,7 @@ export default defineConfig({
         ANTHROPIC_BASE_URL: "http://localhost:3199",
         RESEND_API_KEY: "resend-simulada",
         RESEND_API_URL: "http://localhost:3199/emails",
-        EMAIL_FROM: "Julián OS <avisos@prueba.test>",
+        EMAIL_FROM: "Julitask <avisos@prueba.test>",
       },
       reuseExistingServer: false,
       timeout: 60_000,

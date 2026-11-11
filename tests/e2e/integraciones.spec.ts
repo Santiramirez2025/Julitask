@@ -96,7 +96,7 @@ test("tarea diaria: manda el resumen una sola vez por día", async ({ page }) =>
   const diario = correos.find((c) => String(c.cuerpo["subject"]).startsWith("Tu día"))!;
   expect(correos.filter((c) => String(c.cuerpo["subject"]).startsWith("Tu día"))).toHaveLength(1);
   expect(diario.clave).toBe("Bearer resend-simulada");
-  expect(diario.cuerpo).toMatchObject({ to: [EMAIL], from: "Julián OS <avisos@prueba.test>" });
+  expect(diario.cuerpo).toMatchObject({ to: [EMAIL], from: "Julitask <avisos@prueba.test>" });
   const html = String(diario.cuerpo["html"]).replace(/\u00a0/g, " ");
   expect(html).toContain("Tasa &lt;municipal&gt;"); // el texto del usuario va escapado
   expect(html).toContain("$ 9.900");

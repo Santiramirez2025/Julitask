@@ -252,7 +252,7 @@ test.describe("recorrido de Julián", () => {
       const r = await page.request.get(`/api/exportar/contador?formato=${formato}`);
       expect(r.status()).toBe(200);
       expect((await r.body()).subarray(0, 4).toString("latin1")).toContain(firma);
-      expect(r.headers()["content-disposition"]).toMatch(/julian-os_resumen-contador-\d{4}_\d{4}-\d{2}-\d{2}\./);
+      expect(r.headers()["content-disposition"]).toMatch(/julitask_resumen-contador-\d{4}_\d{4}-\d{2}-\d{2}\./);
     }
     const csv = await (await page.request.get("/api/exportar/impuestos?formato=csv")).text();
     expect(csv).toContain("Monotributo;ARCA");
@@ -437,7 +437,7 @@ test.describe("recorrido de Julián", () => {
     const descarga = page.waitForEvent("download");
     await page.getByRole("link", { name: "Ficha PDF" }).click();
     const pdf = await descarga;
-    expect(pdf.suggestedFilename()).toMatch(/^julian-os_ficha-casa-palermo-12_.*\.pdf$/);
+    expect(pdf.suggestedFilename()).toMatch(/^julitask_ficha-casa-palermo-12_.*\.pdf$/);
     expect(readFileSync(await pdf.path()).subarray(0, 4).toString()).toBe("%PDF");
 
     await page.getByLabel("Agregar cliente").selectOption({ label: "Laura Gómez" });
@@ -522,10 +522,10 @@ test.describe("recorrido de Julián", () => {
     const descarga = page.waitForEvent("download");
     await page.getByRole("link", { name: "Exportar todos mis datos" }).click();
     const archivo = await descarga;
-    expect(archivo.suggestedFilename()).toMatch(/^julian-os_copia-completa_\d{4}-\d{2}-\d{2}\.zip$/);
+    expect(archivo.suggestedFilename()).toMatch(/^julitask_copia-completa_\d{4}-\d{2}-\d{2}\.zip$/);
     const zip = await JSZip.loadAsync(readFileSync(await archivo.path()));
     const nombres = Object.keys(zip.files).filter((n) => !n.endsWith("/"));
-    for (const n of ["LEEME.txt", "datos.json", "Julian-OS.xlsx", "planillas/Pagos.csv", "planillas/Gastos-de-obra.csv"]) {
+    for (const n of ["LEEME.txt", "datos.json", "Julitask.xlsx", "planillas/Pagos.csv", "planillas/Gastos-de-obra.csv"]) {
       expect(nombres, n).toContain(n);
     }
     expect(nombres.filter((n) => n.startsWith("archivos/pago/")).length).toBe(1);

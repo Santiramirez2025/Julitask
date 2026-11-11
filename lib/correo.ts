@@ -16,7 +16,7 @@ export const escaparHtml = esc;
 export function plantilla(titulo: string, cuerpoHtml: string) {
   return `<!doctype html><html lang="es"><body style="margin:0;background:#FAF7F2;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#2B2F36">
 <div style="max-width:520px;margin:0 auto;padding:28px 20px">
-<p style="font-size:14px;color:#5C6470;margin:0 0 6px">Julián OS</p>
+<p style="font-size:14px;color:#5C6470;margin:0 0 6px">Julitask</p>
 <h1 style="font-size:22px;line-height:1.25;margin:0 0 18px;color:#14274A">${esc(titulo)}</h1>
 <div style="font-size:16px;line-height:1.55">${cuerpoHtml}</div>
 </div></body></html>`;

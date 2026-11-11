@@ -137,7 +137,7 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ tipo: strin
         await tablaPagos(u.id, "personal"), await tablaPagos(u.id, "impuesto"), await tablaAgenda(u.id),
         await tablaClientes(u.id), await tablaInmuebles(u.id), tObras, tGastos,
       ];
-      zip.file("Julian-OS.xlsx", await aXLSX(planillas));
+      zip.file("Julitask.xlsx", await aXLSX(planillas));
       for (const t of planillas) zip.file(`planillas/${slug(t.nombre)}.csv`, aCSV(t));
 
       const usados = new Set<string>();
@@ -165,9 +165,9 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ tipo: strin
       zip.file(
         "LEEME.txt",
         [
-          `Copia completa de Julián OS — ${fechaLarga(hoy())}`,
+          `Copia completa de Julitask — ${fechaLarga(hoy())}`,
           "",
-          "Julian-OS.xlsx   Todo en un Excel, una hoja por tema.",
+          "Julitask.xlsx   Todo en un Excel, una hoja por tema.",
           "planillas/       Lo mismo en archivos CSV separados.",
           "archivos/        Comprobantes, fotos y documentos originales.",
           "datos.json       Los datos completos, para restaurar o migrar a otro sistema.",
