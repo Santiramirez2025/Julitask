@@ -18,8 +18,8 @@ Next.js 16 · TypeScript · Tailwind 4 · PostgreSQL (Drizzle) · PWA instalable
    | `ADMIN_PASSWORD` | contraseña inicial, 10 caracteres o más |
    | `ADMIN_NOMBRE` | `Julián Lozita` |
 
-4. **Deploy.** El build aplica las migraciones y crea el usuario si la base está vacía. Si falta algo, el build falla con un mensaje que dice qué.
-5. **Entrá**, cambiá la contraseña desde *Ajustes* y borrá `ADMIN_PASSWORD` de Vercel.
+4. **Deploy.** El build aplica las migraciones y deja al usuario con el email y la contraseña de `ADMIN_EMAIL` / `ADMIN_PASSWORD`. Si falta algo, el build falla con un mensaje que dice qué.
+5. **Entrá**, cambiá la contraseña desde *Ajustes* y borrá `ADMIN_PASSWORD` de Vercel. Mientras esa variable exista, cada deploy vuelve a poner esa contraseña; sirve también para recuperar el acceso: se la vuelve a cargar y se redeploya.
 
 En el celular: abrir la dirección → menú del navegador → *Agregar a pantalla de inicio*.
 
